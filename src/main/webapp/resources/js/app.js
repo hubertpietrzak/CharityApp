@@ -171,4 +171,14 @@ document.addEventListener("DOMContentLoaded", function() {
   if (form !== null) {
     new FormSteps(form);
   }
+
+  $('input#btn').click(function(){
+    let $inputs = $('form#form1 :input[type="checkbox"]'),
+        result = "";
+    $inputs.each(function(){
+      result += $(this).val()+"<br>";
+    });
+    $('div#result').html(result);
+  });
+
 });
