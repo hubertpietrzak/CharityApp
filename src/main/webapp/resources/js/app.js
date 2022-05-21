@@ -172,13 +172,63 @@ document.addEventListener("DOMContentLoaded", function() {
     new FormSteps(form);
   }
 
-  $('input#btn').click(function(){
-    let $inputs = $('form#form1 :input[type="checkbox"]'),
-        result = "";
-    $inputs.each(function(){
-      result += $(this).val()+"<br>";
+  $('input[name=category]').change(function () {
+    $('#categoriesSummary').html('');
+    $('input[name=category]:checked').each(function () {
+      $('#categoriesSummary').append($(this).next().text()+" ");
+      console.log($(this).next().text());
     });
-    $('div#result').html(result);
   });
+
+  $("#quantity").change(function () {
+    console.log(this);
+    console.log($(this).val());
+    $("#quantitySummary").html($(this).val());
+  });
+
+  $('input[name=institution]').change(function () {
+    $('#institutionSummary').html('');
+    $('input[name=institution]:checked').each(function () {
+      $('#institutionSummary').append($(this).next().text()+" ");
+      console.log($(this).next().text());
+    });
+  });
+
+  $("#street").change(function () {
+    console.log(this);
+    console.log($(this).val());
+    $("#streetSummary").html($(this).val());
+  });
+
+  $("#city").change(function () {
+    console.log(this);
+    console.log($(this).val());
+    $("#citySummary").html($(this).val());
+  });
+
+  $("#zipCode").change(function () {
+    console.log(this);
+    console.log($(this).val());
+    $("#zipCodeSummary").html($(this).val());
+  });
+
+  $("#date").change(function () {
+    console.log(this);
+    console.log($(this).val());
+    $("#dateSummary").html($(this).val());
+  });
+
+  $("#time").change(function () {
+    console.log(this);
+    console.log($(this).val());
+    $("#timeSummary").html($(this).val());
+  });
+
+  $("#details").change(function () {
+    console.log(this);
+    console.log($(this).val());
+    $("#detailsSummary").html($(this).val());
+  });
+
 
 });

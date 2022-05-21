@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -15,7 +16,9 @@
   <nav class="container container--70">
     <ul class="nav--actions">
       <li class="logged-user">
-        Witaj Agata
+        <sec:authorize access="isAuthenticated()">
+          <p>Witaj <sec:authentication property="principal.username"/></p>
+        </sec:authorize>
         <ul class="dropdown">
           <li><a href="#">Profil</a></li>
           <li><a href="#">Moje zbiórki</a></li>

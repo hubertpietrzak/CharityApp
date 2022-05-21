@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <a href="/add" class="btn btn--large">Oddaj rzeczy</a>
+    <a href="/register#register" class="btn btn--large">Załóż konto i oddaj rzeczy</a>
 </section>
 
 <section class="about-us" id="about-us">
