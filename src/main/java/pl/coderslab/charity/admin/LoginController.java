@@ -24,7 +24,6 @@ public class LoginController {
         return "register";
     }
 
-
     @PostMapping("/register")
     public String registerAdd(@Valid User user, BindingResult result) {
         if (result.hasErrors()) {
@@ -32,6 +31,11 @@ public class LoginController {
         }
         userService.saveUser(user);
         return "redirect:login";
+    }
+
+    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
+    public String login() {
+        return "login";
     }
 
 

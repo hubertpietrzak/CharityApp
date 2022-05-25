@@ -13,7 +13,7 @@ public class SsoController {
     String logout(HttpServletRequest request) throws ServletException {
         request.logout();
 
-        return "admin/logout";
+        return "logout";
     }
 
 

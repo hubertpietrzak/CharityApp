@@ -16,7 +16,7 @@
 
 <jsp:include page="header.jsp"/>
 
-<section class="form--steps">
+<section class="form--steps" id="form">
     <div class="form--steps-instructions">
         <div class="form--steps-container">
             <h3>Ważne!</h3>
@@ -50,24 +50,16 @@
                 <c:forEach items="${category}" var="category">
                 <div class="form-group form-group--checkbox">
                     <label>
-
                         <input
                                 type="checkbox"
                                 name="category"
                                 value="${category.id}"
-                                path="category"
-                                id="category"
-
-
                         />
                         <span class="checkbox"></span>
                         <span class="description">${category.name}</span>
-
-
                     </label>
                 </div>
                 </c:forEach>
-
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn next-step">Dalej</button>
@@ -77,21 +69,17 @@
             <!-- STEP 2 -->
             <div data-step="2">
                 <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
-
                 <div class="form-group form-group--inline">
                     <label>
                         Liczba 60l worków:
                         <input type="number" name="quantity" step="1" min="1" path="quantity" id="quantity"/>
                     </label>
                 </div>
-
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
                     <button type="button" class="btn next-step">Dalej</button>
                 </div>
             </div>
-
-
 
             <!-- STEP 4 -->
             <div data-step="3">

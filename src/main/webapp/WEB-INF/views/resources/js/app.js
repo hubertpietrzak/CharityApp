@@ -175,8 +175,8 @@ document.addEventListener("DOMContentLoaded", function() {
   $('input[name=category]').change(function () {
     $('#categoriesSummary').html('');
     $('input[name=category]:checked').each(function () {
-      $('#categoriesSummary').append($(this).next().next().text()+" ");
-      console.log($(this).next().next().text());
+      $('#categoriesSummary').append($(this).next().text()+" ");
+      console.log($(this).next().text());
     });
   });
 
@@ -189,8 +189,8 @@ document.addEventListener("DOMContentLoaded", function() {
   $('input[name=institution]').change(function () {
     $('#institutionSummary').html('');
     $('input[name=institution]:checked').each(function () {
-      $('#institutionSummary').append($(this).next().next().text()+" ");
-      console.log($(this).next().next().text());
+      $('#institutionSummary').append($(this).next().text()+" ");
+      console.log($(this).next().text());
     });
   });
 
