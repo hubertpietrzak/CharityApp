@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/institution")
@@ -61,6 +62,13 @@ public class InstitutionController {
     public String deleteInstitution(@PathVariable long id) {
         institutionRepository.deleteById(id);
         return "redirect:/institution/list";
+    }
+
+    @GetMapping("/details/{id}")
+    public String details(@PathVariable long id, Model model) {
+        Optional<Institution> company = institutionRepository.findById(id);
+        company.ifPresent(value -> model.addAttribute("institution", value));
+        return "institution/details";
     }
 
 
